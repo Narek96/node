@@ -8,4 +8,4 @@ class Observer {
   }
 }
 
-module.exports = Observer
+module.exports = Observer;

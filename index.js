@@ -1,17 +1,11 @@
-const Observers = require('./models/Observers');
-const Observer = require('./models/Observer');
+const Observable = require('./models/Observable');
 
-const observers = new Observers();
+const observers = new Observable();
 
-const observer1 = new Observer('First Observer');
-const observer2 = new Observer('Second Observer');
-const observer3 = new Observer('Third Observer');
+observers.subscribe("data", () =>  console.log("data"));
+observers.subscribe("closed", () =>  console.log("closed"));
 
-observers.subscribe(observer1);
-observers.subscribe(observer2);
-observers.subscribe(observer3);
+// observers.unsubscribe("data");
 
-// observers.unsubscribe(observer1);
-// observers.unsubscribe(observer2);
-
-observers.notifyAll();
+observers.notifyAll("closed", {a:0});
+observers.notifyAll("data", {a:1});
