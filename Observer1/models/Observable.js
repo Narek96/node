@@ -1,11 +1,10 @@
 class Observable {
   constructor() {
     this.observers = {};
-
   }
 
   subscribe(name, observer) {
-    this.observers[name] = observer;
+    this.observers[name] = observer
   }
 
   unsubscribe(name) {
@@ -14,9 +13,9 @@ class Observable {
 
   notifyAll(name, data) {
     if (this.observers[name]) {
-      console.log(name, data)
+      console.log(name,this.observers[name](data))
     } else {
-      console.log(name,data)
+      console.log(name, this.observers)
     }
   }
 }

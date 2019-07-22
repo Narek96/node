@@ -2,10 +2,10 @@ const Observable = require('./models/Observable');
 
 const observers = new Observable();
 
-observers.subscribe("data", () =>  console.log("data"));
-observers.subscribe("closed", () =>  console.log("closed"));
+observers.subscribe("data", data => data);
+observers.subscribe("closed", data => data);
 
-// observers.unsubscribe("data");
+observers.unsubscribe("data");
 
 observers.notifyAll("closed", {a:0});
-observers.notifyAll("data", {a:1});
+observers.notifyAll("data", {a:0});

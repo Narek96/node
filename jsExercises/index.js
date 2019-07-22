@@ -219,3 +219,144 @@ function task28(x, y) {
   }
 }
 task28(5,2);
+
+
+// function task30(n) {
+//   let x = 1;
+//   let sum = x;
+//   while (x <= n) {
+//     x = 0.5 * Math.abs(x-4);
+//     sum += Math.pow(x, 2);
+//   }
+//   console.log('task30', sum);
+// }
+// task30(5);
+
+function task31(n) {
+  let x = 100;
+  let sum = 0;
+  while (x <= n) {
+    x++;
+    if (x % 5 === 0) {
+      sum += x;
+    }
+  }
+  console.log('task31', sum)
+}
+
+task31(130);
+
+function task32(n) {
+  let x = 1;
+  let sum = 0;
+  while (x <= n) {
+    sum += (Math.pow(Math.log(3), n) / (n-1) * n) * Math.pow(x, n);
+    x++;
+  }
+  console.log('task32', sum);
+}
+task32(5);
+
+
+function task33(n) {
+  let x = 999;
+  while (n <= x) {
+    let num = parseInt(Math.pow(n * 16, 1/2).toFixed());
+    if (Math.pow(num,2) === n * 16) {
+      console.log('task33', n);
+      break;
+    }
+    n++;
+  }
+}
+task33(100);
+
+function task34(n) {
+  let x = 1000;
+  while (n >= x) {
+    let num = parseInt(Math.pow(n * 14, 1/2).toFixed());
+    if (Math.pow(num,2) === n * 14) {
+      console.log('task34', n);
+      break;
+    }
+    n++;
+  }
+}
+task34(9999);
+
+function task35(n) {
+  let i = 100;
+  let j = 999;
+  while (i <= j) {
+    if (Math.pow(i, 1/2) > n) {
+      console.log('task35', i);
+      break;
+    }
+    i++;
+  }
+}
+task35(15);
+
+function task36(n) {
+  let mn = 0;
+  do {
+    mn= n % 3;
+    n = n / 3;
+  }
+  while ( mn === 0 && n > 1 );
+  if (mn === 0 && n === 1) {
+    console.log('task36',true)
+  } else {
+    console.log('task36',false)
+  }
+}
+task36(58);
+
+function task37(n) {
+  let num = 1;
+  let division;
+  do {
+    num++;
+    division = n % num;
+  } while ( division !== 0 && num <= Math.pow(n,1/2));
+  if (division !== 0) {
+    console.log('task37',true)
+  } else {
+    console.log('task37',false)
+  }
+}
+
+task37(19);
+
+function task38(x, y) {
+  let num = 1;
+  let division;
+  do {
+    num++;
+    division = (x + y) % num;
+  } while ( division !== 0 && num <= Math.pow(x + y,1/2));
+  if (division !== 0) {
+    console.log('task38',true)
+  } else {
+    console.log('task38',false)
+  }
+}
+
+task38(10,13);
+
+function task39(n) {
+  let i = 1, fact;
+  fact = 1;
+  do {
+    fact = fact * i;
+    i++;
+  } while(i <= n);
+  console.log('task39', fact)
+
+}
+task39(5);
+
+// function task40(n, a, b) {
+//   let length = b - a / n;
+// }
+// task40(5, 4,8);
