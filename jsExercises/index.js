@@ -356,7 +356,227 @@ function task39(n) {
 }
 task39(5);
 
-// function task40(n, a, b) {
-//   let length = b - a / n;
-// }
-// task40(5, 4,8);
+function task40(n, a, b) {
+  let sum = 0;
+  let length = b - a / n;
+  do {
+    sum++;
+    console.log('task40', a, a + length * sum, b)
+  } while (sum !== b)
+}
+
+task40(5, 4,15);
+
+function task41(n) {
+  let x = 1;
+  let k = 1;
+  do {
+    k++;
+    x++;
+    console.log('task41', (x + 1) / k)
+  } while (k !== n)
+}
+
+task41(15);
+
+function task42(n) {
+  let x = 1, current;
+  let y = 2;
+  let k = 2;
+  do {
+    current = (x + 2 * y) / 3;
+    x = y;
+    y = current;
+    k++;
+    console.log('task42', (x - 1  + 2 * x) / 3)
+  } while (k !== n)
+}
+
+task42(15);
+
+function task43(n) {
+  let k = 1;
+  do {
+    k++;
+  } while (Math.pow(k,2) <= n)
+  k--;
+  console.log(k)
+}
+
+task43(25);
+
+function task44(n) {
+  let k = n;
+  do {
+    k--;
+  } while (Math.pow(3, k) > n);
+  console.log('task44', k)
+}
+
+task44(40);
+
+task43(25);
+
+function task45(n, p) {
+  let initial = 30000;
+  let count = 0;
+  do {
+    count++;
+    initial = initial + initial * p / 100;
+  } while (initial < 100000);
+  console.log('task45', initial, count)
+}
+
+task45(40,2);
+
+function task47(n) {
+  let x = 0, fib;
+  let y = 1;
+  do {
+    fib = x + y;
+    x = y;
+    y = fib;
+  } while (y !== n && y < n);
+  if (y === n) {
+    console.log('task47', true)
+  }
+}
+
+task47(13);
+
+function task48() {
+  let sum = 0;
+  let count = 0;
+  let arr = [87,5,2,6,4,-8,-9];
+  arr.forEach(num => {
+    if (num > 0) {
+      count++;
+      sum += num;
+    }
+  });
+  console.log('task48', sum / count)
+}
+
+task48();
+
+function task49(k) {
+  let count = 0;
+  let arr = [87,5,2,6,4,-8,-9];
+  arr.forEach((num, index)=> {
+    if (index % k === 0) {
+      count++;
+    }
+  });
+  console.log('task49', count)
+}
+
+task49(4);
+
+function task50(k) {
+  let arr = [87,5,2,6,4,-8,-9];
+  console.log('task50', arr.filter(num => Math.abs(num) < k).length)
+}
+
+task50(58);
+
+function task51(k) {
+  let sum = 0;
+  let count = 0;
+  let arr = [87,5,2,6,4,-8,-9];
+  let newArr = arr.filter((num, index) => index % k === 0);
+
+  newArr.forEach(num => {
+    count++;
+    sum += num;
+  });
+
+  console.log('task51', sum/count)
+}
+
+task51(4);
+
+function task52() {
+  let sum = 1;
+  let arr = [87,5,2,6,4,-8,-9];
+  arr.forEach((num,index) => {
+    if (num - index > 0) {
+      sum *= num;
+    }
+  });
+
+  console.log('task52', sum)
+}
+task52();
+
+function task53() {
+  let sum = 1;
+  let arr = [87,5,2,6,4,-8,-9];
+  arr.forEach((num,index) => {
+    if (num - index > 0) {
+      sum *= num;
+    }
+  });
+
+  console.log('task53', sum)
+}
+
+task53(4);
+
+function task54() {
+  let sum = 0;
+  let arr = [87,5,2,6,4,-8,-9];
+  arr.forEach((num) => {
+    if (num % 2 === 0) {
+      sum += Math.pow(num,2);
+    }
+  });
+  console.log('task54', sum)
+}
+task54();
+
+function task55() {
+  let sum = 0;
+  let arr = [87,5,2,6,4,-8,-9];
+  arr.forEach((num) => {
+    if (num % 2 === 0) {
+      sum += Math.pow(num,2);
+    }
+  });
+  console.log('task55', sum)
+}
+
+task55();
+
+function task56() {
+  let arr = [87,5,2,6,4,-8,-9];
+  console.log('task56', Math.max(...arr) )
+}
+
+task56();
+
+function task57() {
+  let sum = 0;
+  let arr = [5,87,2,6,4,-8,-9];
+  let max = Math.max(...arr);
+  arr.forEach((num,index) => {
+    if (num === max) {
+      sum = max + index;
+    }
+  });
+  console.log('task57', sum)
+}
+
+task57();
+
+function task58() {
+  let arr = [5,2,6,87,-8,-9,100];
+  let max = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+      console.log(max);
+    }
+
+  }
+}
+task58();
