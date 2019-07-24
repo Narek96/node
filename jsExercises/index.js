@@ -444,7 +444,7 @@ function task47(n) {
 
 task47(13);
 
-function task48() {
+function task211() {
   let sum = 0;
   let count = 0;
   let arr = [87,5,2,6,4,-8,-9];
@@ -454,10 +454,10 @@ function task48() {
       sum += num;
     }
   });
-  console.log('task48', sum / count)
+  console.log('task211', sum / count)
 }
 
-task48();
+task211();
 
 function task49(k) {
   let count = 0;
@@ -554,7 +554,7 @@ function task56() {
 
 task56();
 
-function task57() {
+function task255() {
   let sum = 0;
   let arr = [5,87,2,6,4,-8,-9];
   let max = Math.max(...arr);
@@ -563,10 +563,10 @@ function task57() {
       sum = max + index;
     }
   });
-  console.log('task57', sum)
+  console.log('task255', sum)
 }
 
-task57();
+task255();
 
 function task58() {
   let arr = [5,2,6,87,-8,-9,100];
@@ -576,7 +576,205 @@ function task58() {
       max = arr[i];
       console.log(max);
     }
-
   }
 }
 task58();
+
+function task191(n, x) {
+  let sum = 0;
+ for (let i=0; i <= n; i++) {
+   sum += Math.pow(x, i);
+ }
+  console.log('task191', sum)
+}
+task191(2,2);
+
+function task192(n, x) {
+  let sum = 0;
+  for (let i = 0; i <= n; i++) {
+    sum += Math.pow(-1, i) * Math.pow(x, i)
+  }
+  console.log('task192', sum)
+}
+task192(3,2);
+
+function task193(n) {
+  let fact = 1;
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    fact = fact * i;
+    sum += fact;
+  }
+  console.log('task193', sum)
+}
+task193(4);
+
+function task194(n) {
+  let fact = 1;
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    fact = 1 / fact * i;
+    sum += fact;
+  }
+  console.log('task194', sum)
+}
+task194(4);
+
+function task195(n, x) {
+  let fact = 1;
+  let sum = 0;
+  for (let i = 0; i <= n; i++) {
+    if (i === 0) {
+      fact = Math.pow(x, i);
+    } else {
+      fact = Math.pow(x, i) / fact * i;
+    }
+    sum += fact;
+  }
+  console.log('task195', sum)
+}
+
+task195(4, 3);
+
+function task196(n, x) {
+  let fact = 1;
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+      fact = fact * (2*i) * (2 * i +1)
+      sum += Math.pow(-1, i) * Math.pow(x, 2 * i + 1) / fact;
+  }
+  console.log('task196', sum)
+}
+
+task196(4, 3);
+
+function task197(n, x) {
+  let fact = 1;
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    fact = fact * (2 * i + 1) * (2 * i);
+    sum += Math.pow(-1, i) * Math.pow(x, 2 * i) / fact;
+  }
+  console.log('task197', sum)
+}
+
+task197(4, 3);
+
+function task199(n, x) {
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    sum += Math.pow(-1, i) * Math.pow(x, 2 * i + 1) / 2 * i + 1;
+  }
+  console.log('task199', sum)
+}
+
+task199(4, 0.1);
+
+function task245() {
+  let arr = [5, 2, 6, 87, -8, -9, 100];
+  let count = 0;
+  let sum = 0;
+  arr.forEach((num, index) => {
+    if (Math.pow(index, 2) > 0 && Math.pow(index, 2) % 2 === 0) {
+      sum += num;
+      count++;
+    }
+  });
+  console.log('task245', sum / count)
+}
+task245();
+
+function task257() {
+  let arr = [5, 2, 6, 87, -8, -9, 100];
+  let max = arr[0];
+  for (let i = 1; i <= arr.length; i++) {
+    if (arr[i] > max) {
+      console.log('task257', i);
+    }
+  }
+}
+task257();
+
+function task258() {
+  let arr = [5, 2, 6, 87, -8, -9, 100];
+  let arr1 = [1, 47, 8, 68, 54, 59, 35];
+  const arrSum = arr.reduce((a, b) => a + b) / arr.length;
+  const arrSum1 = arr1.reduce((a, b) => a + b) / arr1.length;
+  console.log('task258', arrSum * arrSum1);
+}
+task258();
+
+function task259() {
+  let arr = [5, 2, 6, 87, -8, -9, 100];
+  let arr1 = [1, 47, 8, 68, 54, 59, 35];
+  const arrSum = Math.pow(arr.reduce((a, b) => Math.pow(a, 2)+ Math.pow(b, 2)) / arr.length, 1/2);
+  const arrSum1 =  Math.pow(arr1.reduce((a, b) => Math.pow(a, 2)+ Math.pow(b, 2)) / arr1.length, 1/2);
+  console.log('task259', arrSum * arrSum1);
+}
+task259();
+
+function task263() {
+  let arr = [5, 2, 6, 87, -8, -9, 100];
+  let arr1 = [1, 47, 8, 68, 54, 59, 35];
+  let arrLength = arr.filter(num => num > 0).length;
+  let arrLength1 = arr1.filter(num => num > 0).length;
+  console.log('task263', arrLength + arrLength1);
+}
+task263();
+
+function task265() {
+  let arr = [5, 2, 6, 87, -8, -9, 100];
+  let arr1 = [1, 47, 8, 68, 54, 59, 35];
+  const arrSum = arr.reduce((a, b) => a + b);
+  const arrMult = arr1.reduce((a, b) => a * b);
+  console.log('task258', arrSum - arrMult);
+}
+
+task265();
+
+function task266() {
+  let arr = [5, 2, 6, 87, -8, -9, 100];
+  let arr1 = [1, 47, 8, 68, 54, 59, 35];
+  const newArray = arr.filter(a => a % 2 !== 0);
+  const newArray1 = arr1.filter(a => a % 2 === 0);
+  const arrSum = newArray.reduce((a, b) => a + b);
+  const arrMult = newArray1.reduce((a, b) => a * b);
+  console.log('task266', arrSum - arrMult);
+}
+task266();
+
+function task271() {
+  let arr = [5, 2, 6, 87, 'a',true,false,'a', 'b'];
+  console.log('task271', arr.filter(symb => symb === 'a').length);
+}
+task271();
+
+function task272(n) {
+  let t = true;
+  let arr = [5, 2, 6, 87, 'a',true,false,'a', 'b', 'k'];
+  if (n / 2 >=  arr.filter(symb => symb === 'b').length) {
+    console.log('task272', t)
+  } else {
+    console.log('task272', false)
+  }
+}
+task272(1);
+
+function task275() {
+  let arr = [5, 2, 6, 87, 'a', true,false, 'a', 'b','f', 'k'];
+  console.log('task275', arr.filter(symb => symb < 'k').length)
+}
+task275();
+
+function task278() {
+  let arr = [5, 2, 6, 87, 'a','f', true,false, 'a', 'b','f', 'k'];
+  let newArr = [];
+  arr.forEach(num => {
+    newArr.push(num);
+    if (num === 'f') {
+      newArr.push('f');
+    }
+  });
+  console.log('task278', newArr)
+}
+task278();
