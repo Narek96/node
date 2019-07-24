@@ -13,12 +13,11 @@ class Observable {
 
   notifyAll(name, data) {
     if (this.observers[name]) {
-      console.log(name,this.observers[name](data))
+      console.log(name, this.observers[name](data))
     } else {
       console.log(name, this.observers)
     }
   }
 }
-
 
 module.exports =  Observable;
