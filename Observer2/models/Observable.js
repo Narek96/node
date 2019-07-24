@@ -13,10 +13,10 @@ class Observable {
 
   notifyAll(name, data) {
     this.observers.forEach(el => {
-      if (el.name && el.name === name) {
+      if (el.name && el.name === name && typeof el.observer === 'function') {
         console.log(name, el.observer(data))
       } else {
-        console.log(name, el.observer(data))
+        console.log(name, el.name)
       }
     });
   }

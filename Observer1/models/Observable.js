@@ -12,7 +12,7 @@ class Observable {
   }
 
   notifyAll(name, data) {
-    if (this.observers[name]) {
+    if (this.observers[name] && typeof this.observers[name] === 'function') {
       console.log(name, this.observers[name](data))
     } else {
       console.log(name, this.observers)

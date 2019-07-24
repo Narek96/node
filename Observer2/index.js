@@ -8,4 +8,4 @@ observers.subscribe("closed", data => data);
 observers.unsubscribe("data");
 
 observers.notifyAll("closed", {a:0});
-observers.notifyAll("data", {a:0});
+observers.notifyAll("data", {a:1});
